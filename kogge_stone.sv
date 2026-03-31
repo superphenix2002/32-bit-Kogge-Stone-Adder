@@ -68,7 +68,7 @@ endgenerate
 //c layer
 generate
 for(genvar i=4; i <32; i++) begin
-assign c[i] = g_layer3[i] | (c[i-1] & p_layer3[i]);
+assign c[i] = g_layer3[i-4];
 end
 endgenerate
 
