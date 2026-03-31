@@ -1,10 +1,7 @@
 module kogge_stone_adder32(
 input logic [31:0] a,
 input logic [31:0] b,
-output logic [31:0] out,
-output logic [31:0] c_out,
-output logic [31:0] p_out,
-output logic [31:0] g_out);
+output logic [31:0] out);
 
 logic [31:0] p;
 logic [31:0] g;
@@ -76,14 +73,6 @@ endgenerate
 generate
 for(genvar i=1; i <32; i++) begin
 assign out[i] = p[i] ^ c[i-1];
-end
-endgenerate
-
-generate
-for(genvar i=1; i <32; i++) begin
-assign c_out[i] = c[i];
-assign p_out[i] = p[i];
-assign g_out[i] = g[i];
 end
 endgenerate
 
